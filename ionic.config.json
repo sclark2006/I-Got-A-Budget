@@ -1,0 +1,8 @@
+{
+  "name": "i-got-a-budget",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "be33323e"
+}

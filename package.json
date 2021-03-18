@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@capacitor/core": "2.4.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/vue-fontawesome": "^3.0.0-3",
     "@ionic/vue": "^5.4.0",
     "@ionic/vue-router": "^5.4.0",
     "core-js": "^3.6.5",

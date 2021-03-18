@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
-import Folder from '@/views/Folder.vue'
+import Folder from '@/views/Content.vue'
 
 describe('Folder.vue', () => {
   it('renders folder view', () => {
     const mockRoute = {
       params: {
-        id: 'Outbox'
+        view: 'Dashboard'
       }
     }
     const wrapper = mount(Folder, {

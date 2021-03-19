@@ -48,21 +48,8 @@ import {
   gridOutline, walletOutline, trailSignOutline, pieChartOutline, peopleOutline, optionsOutline, bookmarkSharp, bookmarkOutline
 } from "ionicons/icons";
 
-
-const AppMenu = defineComponent({
-  components: {
-    IonContent,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonMenu,
-    IonMenuToggle,
-  },
-  setup() {
-    const selectedIndex = ref(0);
-    const appPages = [
+const selectedIndex = ref(0);
+const appPages = [
       { title: "Dashboard", url: "/Dashboard", icon: gridOutline },
       { title: "Accounts", url: "/Accounts", icon: walletOutline },
       { title: "Planning", url: "/Planning", icon: trailSignOutline},
@@ -70,6 +57,14 @@ const AppMenu = defineComponent({
       { title: "Reports", url: "/Reports", icon: pieChartOutline },
       { title: "Settings", url: "/Settings", icon: optionsOutline },
     ];
+
+const AppMenu = defineComponent({
+  mounted() {
+    selectedIndex.value = 1;
+    this.$router.push("/Accounts");
+  },
+  setup() {
+    
     const labels = ["AMEX", "Cash"];
 
     const path = window.location.pathname.split("/")[1];
@@ -87,6 +82,16 @@ const AppMenu = defineComponent({
       labels, bookmarkSharp, bookmarkOutline,
       isSelected: (url: string) => (url === route.path ? "selected" : ""),
     };
+  },
+  components: {
+    IonContent,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonMenu,
+    IonMenuToggle,
   },
 });
 

@@ -17,8 +17,10 @@
     "@ionic/vue": "^5.4.0",
     "@ionic/vue-router": "^5.4.0",
     "core-js": "^3.6.5",
+    "firebase": "^8.3.1",
     "vue": "^3.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuefire": "^2.2.5"
   },
   "devDependencies": {
     "@capacitor/cli": "2.4.7",

@@ -31,7 +31,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
 import { IonButtons, IonButton, IonList, IonItem, IonItemGroup, IonLabel, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
 import db from '../firebase';
@@ -41,16 +41,15 @@ export default {
   name: 'Accounts',
   data() {
       return {
-          accounts: new Array<Account>()
+          accounts: []
       }
   },
    created() {
        const user = db.app.auth().currentUser;
-       console.log(this.accounts.length);
-       if(user)
+        if(user)
         db.collection(`/users/${user.uid}/accounts`).onSnapshot(change => {
             change.forEach(doc => {
-                const acc: Account =  doc.data() as Account;
+                const acc = doc.data();
                 this.accounts.push(acc);
             })
         });

@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Content from '../views/Content.vue';
-import Landing from '../views/Landing.vue';
-import Accounts from '../views/Accounts.vue';
-import Home from '../views/Home.vue';
+import Content from '../pages/Content.vue';
+import Landing from '../pages/Landing.vue';
+import Accounts from '../pages/Accounts.vue';
+import Home from '../pages/Home.vue';
 
 import db from '../firebase';
 

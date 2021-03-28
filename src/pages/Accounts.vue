@@ -35,7 +35,6 @@
 import { IonButtons, IonButton, IonList, IonItem, IonItemGroup, IonLabel, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
 import db from '../firebase';
-import {Account} from '../store/modules/accounts';
 
 export default {
   name: 'Accounts',

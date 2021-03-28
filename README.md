@@ -7,6 +7,7 @@ I've being user of YNAB (https://www.youneedabudget.com/) to handle my personal 
 - Expense management
 - Multicurrency support
 - Multiple budget scenarios
+- Use percentages and quantities in budget scenarios
 - Import data from YNAB
 - Use as UI for YNAB
 - Financial institution details for bank accounts and credit card
@@ -18,10 +19,13 @@ I've being user of YNAB (https://www.youneedabudget.com/) to handle my personal 
 - [x] Ionic UI support
 - [x] Capacitor support
 - [x] Firebase config
-- [ ] Set the folder architecture
-- [ ] Left Menu 
+- [x] Anonymous login
+- [x] Set the folder architecture
+- [x] Left Menu 
 - [ ] Mobile Tabs
 - [ ] Manage Transactions
+- [ ] Google SignIn
+- [ ] Email SignIn
 - [ ] Balances report
 - [ ] Import data from YNAB
 - [ ] Manage Contacts

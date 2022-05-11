@@ -28,7 +28,7 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
 export default {
-  name: 'Content',
+  name: 'ContentView',
   components: {
     IonButtons,
     IonContent,

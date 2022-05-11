@@ -41,7 +41,7 @@
 import { IonSlides, IonSlide, IonPage } from "@ionic/vue";
 import { defineComponent } from "vue";
 
-const Landing = defineComponent({
+const LandingPage = defineComponent({
     components: { IonSlides, IonSlide, IonPage },
     data: () =>  {
         return {
@@ -58,5 +58,5 @@ const Landing = defineComponent({
   },
 });
 
-export default Landing;
+export default LandingPage;
 </script>

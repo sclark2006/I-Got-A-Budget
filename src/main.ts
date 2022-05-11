@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
+
 //import store from './store';
 import { IonicVue } from '@ionic/vue';
 
@@ -29,14 +30,18 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import FirebasePlugin from 'vca-firebase'
+import firebaseConfig from '../firebase.config'
+
 library.add(faCreditCard,)
 
 const app = createApp(App)
   .use(IonicVue)
+  .use(FirebasePlugin, firebaseConfig);
   //.use(store)
-  .use(router);
+  app.use(router)
+  .component('font-awesome-icon',FontAwesomeIcon);
 
-app.component('font-awesome-icon',FontAwesomeIcon)
 router.isReady().then(() => {
   app.mount('#app');
 });

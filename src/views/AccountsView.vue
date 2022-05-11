@@ -31,31 +31,21 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
 import { IonButtons, IonButton, IonList, IonItem, IonItemGroup, IonLabel, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { defineComponent } from 'vue';
+import { useCollection, useAuth  } from 'vca-firebase';
 
-import db from '../firebase';
-import {Account} from '../store/modules/accounts';
+export default defineComponent({
+  name: 'AccountsView',
+  setup() {
+    const { uid } = useAuth()
+    const { docs: accounts } = useCollection(`/users/${uid.value}/accounts`)
 
-export default {
-  name: 'Accounts',
-  data() {
-      return {
-          accounts: new Array<Account>()
-      }
+    return {
+      accounts
+    };
   },
-   created() {
-       const user = db.app.auth().currentUser;
-       console.log(this.accounts.length);
-       if(user)
-        db.collection(`/users/${user.uid}/accounts`).onSnapshot(change => {
-            change.forEach(doc => {
-                const acc: Account =  doc.data() as Account;
-                this.accounts.push(acc);
-            })
-        });
-        
-   },
   components: {
       IonButton,
     IonButtons,
@@ -67,7 +57,7 @@ export default {
     IonToolbar,
     IonList, IonLabel, IonItem, IonItemGroup
   }
-}
+});
 </script>
 
 <style scoped>

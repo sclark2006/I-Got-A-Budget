@@ -33,27 +33,20 @@
 
 <script>
 import { IonButtons, IonButton, IonList, IonItem, IonItemGroup, IonLabel, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { defineComponent } from 'vue';
+import {Account} from '../store/modules/accounts';
+import { useCollection, useAuth  } from 'vca-firebase';
 
-import db from '../firebase';
+export default defineComponent({
+  name: 'AccountsView',
+  setup() {
+    const { uid } = useAuth()
+    const { docs: accounts } = useCollection(`/users/${uid.value}/accounts`)
 
-export default {
-  name: 'Accounts',
-  data() {
-      return {
-          accounts: []
-      }
+    return {
+      accounts
+    };
   },
-   created() {
-       const user = db.app.auth().currentUser;
-        if(user)
-        db.collection(`/users/${user.uid}/accounts`).onSnapshot(change => {
-            change.forEach(doc => {
-                const acc = doc.data();
-                this.accounts.push(acc);
-            })
-        });
-        
-   },
   components: {
       IonButton,
     IonButtons,
@@ -65,7 +58,7 @@ export default {
     IonToolbar,
     IonList, IonLabel, IonItem, IonItemGroup
   }
-}
+});
 </script>
 
 <style scoped>

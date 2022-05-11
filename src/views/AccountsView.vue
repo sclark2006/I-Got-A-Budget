@@ -34,7 +34,6 @@
 <script>
 import { IonButtons, IonButton, IonList, IonItem, IonItemGroup, IonLabel, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import {Account} from '../store/modules/accounts';
 import { useCollection, useAuth  } from 'vca-firebase';
 
 export default defineComponent({

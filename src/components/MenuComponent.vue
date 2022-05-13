@@ -9,7 +9,7 @@
       <ion-list>
             <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
                 <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
-                <ion-icon  slot="start" :md ="p.icon"></ion-icon>
+                <ion-icon  :slot-scope="start" :md ="p.icon"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
                 </ion-item>
             </ion-menu-toggle>
@@ -31,7 +31,7 @@
   </ion-menu>
 </template>
 
-<script lang="ts">
+<script>
 import {
   IonContent,
   IonIcon,
@@ -80,7 +80,7 @@ const AppMenu = defineComponent({
       selectedIndex,
       appPages,
       labels, bookmarkSharp, bookmarkOutline,
-      isSelected: (url: string) => (url === route.path ? "selected" : ""),
+      isSelected: (url) => (url === route.path ? "selected" : ""),
     };
   },
   components: {

@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
 import ContentView from '../views/ContentView.vue';
 import LandingPage from '../views/LandingPage.vue';
 import AccountsView from '../views/AccountsView.vue';
@@ -12,7 +11,7 @@ import HomePage from '../views/HomePage.vue';
 //const auth= db.app.auth();
 //const { uid, user, signInAnonymously} = useAuth()
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '/landing',
     component: LandingPage,

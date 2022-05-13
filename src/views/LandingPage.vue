@@ -37,7 +37,7 @@
 </template>
 
 
-<script lang="ts">
+<script>
 import { IonSlides, IonSlide, IonPage } from "@ionic/vue";
 import { defineComponent } from "vue";
 
@@ -52,7 +52,7 @@ const LandingPage = defineComponent({
         }
     },
   methods: {
-    navigateTo(url: string) {
+    navigateTo(url) {
       this.$router.push(url);
     },
   },
